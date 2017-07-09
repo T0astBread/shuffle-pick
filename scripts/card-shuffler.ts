@@ -137,6 +137,17 @@ let fillWithCards = () =>
     canSpin = true;
 };
 
+let removeCards = () =>
+{
+    $(".card-shuffler").html("");
+};
+
+let updateCardShuffler = () =>
+{
+    removeCards();
+    fillWithCards();
+};
+
 $(document).ready(() =>
 {
     fillWithCards();

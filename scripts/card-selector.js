@@ -9,7 +9,21 @@ var Card = (function () {
     }
     return Card;
 }());
-var cards = [new Card("d", "i")];
+var cards = [];
+var updateCards = function () {
+    cards = [];
+    $("#values").val().split(/\n/).forEach(function (line) {
+        var tokens = line.split(";");
+        cards.push(new Card(tokens[0], tokens[1]));
+    });
+};
 var getRandomCard = function () {
     return cards[Math.floor(Math.random() * cards.length)];
 };
+$(document).ready(function () {
+    updateCards();
+    $("#set-values").click(function () {
+        updateCards();
+        updateCardShuffler();
+    });
+});

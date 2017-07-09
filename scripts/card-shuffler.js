@@ -110,6 +110,13 @@ var fillWithCards = function () {
     }, 200);
     canSpin = true;
 };
+var removeCards = function () {
+    $(".card-shuffler").html("");
+};
+var updateCardShuffler = function () {
+    removeCards();
+    fillWithCards();
+};
 $(document).ready(function () {
     fillWithCards();
     distributeSpace();

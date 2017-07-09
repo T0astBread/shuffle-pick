@@ -14,9 +14,29 @@ class Card
     }
 }
 
-let cards: Array<Card> = [new Card("d", "i")];
+let cards: Array<Card> = [];
+
+let updateCards = () =>
+{
+    cards = [];
+    $("#values").val().split(/\n/).forEach((line: string) =>
+    {
+        let tokens = line.split(";");
+        cards.push(new Card(tokens[0], tokens[1]));
+    });
+};
 
 let getRandomCard = () =>
 {
     return cards[Math.floor(Math.random() * cards.length)];
 };
+
+$(document).ready(() =>
+{
+    updateCards();
+    $("#set-values").click(() =>
+    {
+        updateCards();
+        updateCardShuffler();
+    });
+});
