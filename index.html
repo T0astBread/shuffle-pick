@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Project Ideas</title>
+        <link rel="stylesheet" href="styles/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="scripts/card-shuffler.js"></script>
+        <script src="scripts/card-selector.js"></script>
+    </head>
+    <body>
+        <h1>Shuffle Pick</h1>
+        <section class="card-shuffler">
+        </section>
+        <section class="panel controls">
+            <span>Speed: </span><input id="speed" type="range" min="1" max="50" value="40"><br>
+            <span>Step Width: </span><input id="step" type="range" min="1" max="50" value="20"><br>
+            <button id="spin">Shuffle!</button>
+        </section>
+        <section class="panel value-inputs">
+            <textarea id="values"></textarea>
+            <button id="set-values">Set Values</button>
+        </section>
+        <!--<div id="divider-debug"></div>-->
+    </body>
+</html>

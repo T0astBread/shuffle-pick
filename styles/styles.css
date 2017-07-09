@@ -1,0 +1,141 @@
+body
+{
+    padding: 0;
+    margin: 7em;
+    margin-top: 3.5em;
+    margin-bottom: 0;
+    background-color: #ccc;
+    overflow-x: hidden;
+
+    font-family: Arial, sans-serif;
+
+    perspective: 2000px;
+    perspective-origin: center;
+}
+
+h1
+{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1em;
+    font-size: 48pt;
+}
+
+.card
+{
+    text-align: center;
+    margin: 4em 0;
+    padding: 4em 2em;
+    background-color: white;
+    box-shadow: 0 0 15px black;
+    width: 25em;
+    overflow: hidden;
+    /*transition: transform .5s linear;*/
+
+    /*animation-name: card-intro;*/
+    /*animation-duration: 1s;*/
+    /*animation-fill-mode: forwards;*/
+    /*animation-iteration-count: 1;*/
+}
+
+@keyframes card-intro
+{
+    from
+    {
+        transform: translateY(-100%);
+    }
+    to
+    {
+        transform: translateY(0);
+    }
+}
+
+.card *
+{
+    padding: 0;
+    margin: 0;
+}
+
+.card h4
+{
+    font-size: 32pt;
+    margin-bottom: .5em;
+}
+
+.card a
+{
+    font-size: 16pt;
+    color: #999;
+}
+
+.card-shuffler
+{
+    position: relative;
+    /*overflow: hidden;*/
+    /*background-color: red;*/
+}
+
+.card-shuffler .card
+{
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+}
+
+#divider-debug
+{
+    height: 600px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    background-color: black;
+}
+
+.panel
+{
+    background-color: white;
+    box-shadow: 0 0 5px black;
+    font-size: 12pt;
+    padding: 1em;
+    display: inline-block;
+    line-height: 1.5em;
+}
+
+button
+{
+    font-size: 16pt;
+}
+
+.controls span
+{
+    float: left;
+}
+
+.controls input
+{
+    float: right;
+}
+
+.controls button
+{
+    width: 100%;
+    margin-top: .6em;
+}
+
+.value-inputs
+{
+    float: right;
+    margin-bottom: 1em;
+}
+
+.value-inputs *
+{
+    width: 100%;
+}
+
+.value-inputs textarea
+{
+    height: 8em;
+    resize: vertical;
+}
