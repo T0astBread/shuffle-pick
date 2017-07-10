@@ -43,7 +43,8 @@ var update = function (shuffler, doMovement) {
         // qCard.css("visibility", left > shuffler.width() - card.clientWidth ? "hidden" : "visible");
         var dist = 1 - distanceToMiddle(qCard, shuffler);
         qCard.css("z-index", Math.round(dist * 100));
-        title.css("font-size", 30 * dist + 2 + "pt");
+        qCard.css("height", 4 * dist + 5 + "em");
+        title.css("margin-top", .5 * dist + "em");
         qCard.css("opacity", dist);
         // qCard.find("h4").text(dist.toFixed(2))
         qCard.css("top", shuffler.outerHeight() / 2 - qCard.outerHeight(true) / 2);

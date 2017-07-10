@@ -52,7 +52,8 @@ let update = (shuffler: JQuery, doMovement = true) =>
         let dist = 1 - distanceToMiddle(qCard, shuffler);
         qCard.css("z-index", Math.round(dist * 100));
 
-        title.css("font-size", 30 * dist + 2 + "pt");
+        qCard.css("height", 4 * dist + 5 + "em");
+        title.css("margin-top", .5 * dist + "em");
         qCard.css("opacity", dist);
 
         // qCard.find("h4").text(dist.toFixed(2))

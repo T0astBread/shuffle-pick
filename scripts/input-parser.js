@@ -12,7 +12,8 @@ var parseLinks = function (text) {
     return text.split(" ").map(function (text) { return text.replace(linkExp, function (rawText, http, www, domain, ending, resource) {
         if (!domain)
             return rawText;
-        var assembledLink = (http ? http : "https://") + (www ? www : "") + domain + "." + ending + (resource ? resource : "");
-        return "<a href='" + assembledLink + "' target=\"_blank\">" + assembledLink + "</a>";
+        var fullDomain = domain + "." + ending;
+        var assembledLink = (http ? http : "https://") + (www ? www : "") + fullDomain + (resource ? resource : "");
+        return "<a href=\"" + assembledLink + "\" target=\"_blank\" title=\"" + fullDomain + "\">" + assembledLink + "</a>";
     }); }).join(" ");
 };
