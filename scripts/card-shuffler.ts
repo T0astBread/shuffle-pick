@@ -60,8 +60,9 @@ let update = (shuffler: JQuery, doMovement = true) =>
 
         qCard.css("top", shuffler.outerHeight()/2 - qCard.outerHeight(true)/2);
 
-        //Doesn't work yet. TODO: Make it work
-        qCard.css("transform", "rotate3d(0, 1, 0, " + ((1 - dist) * (isOverMiddle(qCard, shuffler) ? -1 : 1)) * 50 + "deg)");
+        let rotation = "rotate3d(0, 1, 0, " + ((1 - dist) * (isOverMiddle(qCard, shuffler) ? -1 : 1)) * 50 + "deg)";
+        qCard.css("transform", rotation);
+        qCard.css("-moz-transform", rotation);
 
         if(finishSpinning && dist > .99 - .05 * (stepSizeTemp/maxStepSize)) stopSpinningAfterStep = true;
     });

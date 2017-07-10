@@ -8,9 +8,6 @@ body
     overflow-x: hidden;
 
     font-family: Arial, sans-serif;
-
-    perspective: 2000px;
-    perspective-origin: center;
 }
 
 h1
@@ -101,6 +98,9 @@ h1
     position: relative;
     /*overflow: hidden;*/
     /*background-color: red;*/
+
+    perspective: 2000px;
+    perspective-origin: center;
 }
 
 .card-shuffler .card
