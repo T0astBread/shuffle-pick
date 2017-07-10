@@ -30,7 +30,7 @@ var update = function (shuffler, doMovement) {
     var stopSpinningAfterStep = false;
     cards.each(function (i, card) {
         var qCard = $(card);
-        var title = qCard.find("h4"), link = qCard.find("a");
+        var title = qCard.find("h4"), body = qCard.find("p");
         var left = leftOf(qCard);
         if (doMovement)
             qCard.css("left", left -= stepSizeTemp);
@@ -38,8 +38,7 @@ var update = function (shuffler, doMovement) {
             qCard.css("left", shuffler.width());
             var randCard = getRandomCard();
             title.text(randCard.title);
-            link.text(randCard.text);
-            link.attr("href", randCard.text);
+            body.html(randCard.text);
         }
         // qCard.css("visibility", left > shuffler.width() - card.clientWidth ? "hidden" : "visible");
         var dist = 1 - distanceToMiddle(qCard, shuffler);
@@ -105,7 +104,7 @@ var fillWithCards = function () {
         if (i++ >= 7)
             clearInterval(interval);
         var card = getRandomCard();
-        $(".card-shuffler").append("<div class='card'><h4>" + card.title + "</h4><a href='" + card.text + "'>" + card.text + "</a></div>");
+        $(".card-shuffler").append("<div class='card'><h4>" + card.title + "</h4><p>" + card.text + "</p></div>");
         distributeSpace();
     }, 200);
     canSpin = true;

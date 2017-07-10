@@ -2,6 +2,8 @@
  * Created by T0astBread on 03.07.2017.
  */
 
+///<reference path="input-parser.ts"/>
+
 class Card
 {
     title: string;
@@ -22,7 +24,7 @@ let updateCards = () =>
     $("#values").val().split(/\n/).forEach((line: string) =>
     {
         let tokens = line.split(";");
-        cards.push(new Card(tokens[0], tokens[1]));
+        cards.push(new Card(tokens[0], parseText(tokens[1])));
     });
 };
 
